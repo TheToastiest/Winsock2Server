@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{f9d6ef6e-bc35-43cc-bd2b-25cdd1df7061}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config">
+      <UniqueIdentifier>{42de57ff-48ce-4992-b35d-ff7414e6b826}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logs">
+      <UniqueIdentifier>{cf36d26d-69d0-4778-9a4c-bdd2e0bc759c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPLoginServer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="UDPGameServer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkUtils.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Encryption.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLogic.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="TLSWrapper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCPServer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPInventoryServer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPChatServer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageQueue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="NPC.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TCPLoginServer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="UDPGameServer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerManager.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkUtils.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLogic.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCPServer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkTypes.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Encryption.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPInventoryServer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPChatServer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageQueue.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkHandler.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Compression.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldState.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="MathUtils.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
