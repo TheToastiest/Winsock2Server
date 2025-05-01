@@ -1,8 +1,10 @@
 ﻿#include "GameLogic.h"
+#include "NPC.h"
+#include "Logger.h"
 #include <cmath>
-#include <spdlog/spdlog.h>
 #include <random>
 #include <chrono>
+#include <iostream>
 
 // Global world state instance.
 WorldState worldState;
@@ -30,7 +32,7 @@ void updateGameWorld() {
     constexpr float deltaTime = 1.0f / 60.0f;
 
     // Process each NPC for waypoint following.
-    for (auto& npc : worldState.getNPCs()) {
+    for (auto& [id,npc] : worldState.getNPCs()) {
         if (!npc.hasWaypoint()) {
             float targetX = dis(gen);
             float targetY = dis(gen);
@@ -75,7 +77,7 @@ void synchronizeGameState() {
     spdlog::info("Game State Synced");
 
     // Log state for each NPC. (There are no players in this demo.)
-    for (const auto& npc : worldState.getNPCs()) {
+    for (const auto& [id,npc] : worldState.getNPCs()) {
         spdlog::info("NPC: {} at ({:.2f}, {:.2f})", npc.getName(), npc.getX(), npc.getY());
     }
 }

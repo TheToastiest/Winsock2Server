@@ -6,12 +6,16 @@
 class Player {
 public:
     // Constructor accepts a name and an id
-    Player(const std::string& name, int id);
+    Player() = default;
+	Player(std::string name, int id);
 
     // Basic actions
     void move(float x, float y);
     void attack();
     void update();  // Handles per-frame updates
+
+    // Get player name
+	std::string getName() const;
 
     // Movement prediction support:
     // Returns true if the last position update was recent enough to use interpolation.
@@ -27,17 +31,18 @@ public:
     // Getters for velocity
     std::pair<float, float> getVelocity() const;
     void setVelocity(float newVelX, float newVelY);
+    
+	void saveToBinary(std::ofstream& outFile) const;
+    void loadFromBinary(std::ifstream& inFile);
 
-
-    // Regular accessors
-    std::string getName() const;
+	// Getters for player ID and position
     int getID() const;
     float getX() const;
     float getY() const;
 
 private:
     std::string name;
-    int id;
+    int playerID;
     float posX, posY;       // Current position
     float prevX, prevY;     // Previous position (used for interpolation)
     float velocityX, velocityY; // Current velocity (used for extrapolation)

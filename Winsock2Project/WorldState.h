@@ -1,15 +1,29 @@
 ﻿#pragma once
 #include <vector>
+#include <unordered_map>
+#include "PlayerManager.h"
 #include "Player.h"
 #include "NPC.h"
+#include "Logger.h"
+
 
 class WorldState {
 public:
-    // Adds a player to the world.
-    void addPlayer(const Player& player);
 
-    // Removes a player from the world by player ID.
-    void removePlayer(int playerID);
+	// add player to the world
+	void addPlayer(const Player& player);
+
+	// Removes a player from the world by player ID.
+	void removePlayer(int playerID);
+
+	// Updates all players in the world.    
+	void updatePlayers();
+
+	// Retreives a player by ID
+	void getPlayer(int playerID);
+
+	// Returns all players in the world. 
+	const std::unordered_map<int, Player>& getPlayers() const;
 
     // Adds an NPC to the world.
     void addNPC(const NPC& npc);
@@ -19,14 +33,21 @@ public:
 
     // Updates the world (e.g., updates all players and NPCs).
     void updateWorld();
+    
+    // Access Player Management
+    PlayerManager& getPlayerManager();
 
-    // Returns a reference to the container of players.
-    std::vector<Player>& getPlayers();
+    // Saves to a binary serialization
+    void saveToBinary(const std::string& filename);
 
-    // Returns a reference to the container of NPCs.
-    std::vector<NPC>& getNPCs();
+	// Loads from a binary serialization
+	void loadFromBinary(const std::string& filename);
+
+    // Get npcs
+	std::unordered_map<int, NPC>& getNPCs();
+
 
 private:
-    std::vector<Player> players;
-    std::vector<NPC> npcs;
+    PlayerManager playerManager;  // Handles all player-related operations
+    std::unordered_map<int, NPC> npcs;
 };

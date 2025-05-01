@@ -14,117 +14,171 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="include\Networking">
+      <UniqueIdentifier>{8f9f79b7-2302-4df5-a15e-e4099160972d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Core System Utilities">
+      <UniqueIdentifier>{8ae81190-c52c-4022-94fc-a0007d34e7ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core System Utilities">
+      <UniqueIdentifier>{25b74480-1e37-40ce-818f-019147fe6997}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Networking">
+      <UniqueIdentifier>{7582c9a0-1537-41bb-aaaf-9cba9effee19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Game Logic &amp; World Management">
+      <UniqueIdentifier>{015b0b74-4771-49a4-a10f-6cce6d194e44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game Logic &amp; World Management">
+      <UniqueIdentifier>{15e9e714-07f8-465f-8003-f6ba4df1555f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Player and NPC">
+      <UniqueIdentifier>{68fa1989-89dc-451a-9631-707aab9c6d7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mutliplayer Services">
+      <UniqueIdentifier>{853cd385-ab5b-471c-b08f-4fefc29673c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Multiplayer Services">
+      <UniqueIdentifier>{44dbcd65-5680-421b-b7f8-ed294ce7650c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Player and NPC Management">
+      <UniqueIdentifier>{11cfc3be-ac30-4159-b6ed-bd882389ba6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Database Management">
+      <UniqueIdentifier>{962fbb68-1129-4c90-8af8-0e57779d8ed9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Entry Point">
+      <UniqueIdentifier>{243f9b85-27ea-4f71-9744-8eb420eca103}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="TCPLoginServer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="UDPGameServer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="NetworkUtils.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="Encryption.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="GameLogic.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="Database.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="Logger.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="TLSWrapper.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="IOCPServer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="TCPInventoryServer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="TCPChatServer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="MessageQueue.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="NetworkHandler.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="NPC.cpp">
-      <Filter>src</Filter>
+      <Filter>src\Game Logic &amp; World Management</Filter>
     </ClCompile>
     <ClCompile Include="WorldState.cpp">
-      <Filter>src</Filter>
+      <Filter>src\Game Logic &amp; World Management</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPChatServer.cpp">
+      <Filter>src\Mutliplayer Services</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPInventoryServer.cpp">
+      <Filter>src\Mutliplayer Services</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPLoginServer.cpp">
+      <Filter>src\Mutliplayer Services</Filter>
+    </ClCompile>
+    <ClCompile Include="TLSWrapper.cpp">
+      <Filter>src\Mutliplayer Services</Filter>
+    </ClCompile>
+    <ClCompile Include="UDPGameServer.cpp">
+      <Filter>src\Mutliplayer Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Encryption.cpp">
+      <Filter>src\Core System Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>src\Core System Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCPServer.cpp">
+      <Filter>src\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkHandler.cpp">
+      <Filter>src\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkUtils.cpp">
+      <Filter>src\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageQueue.cpp">
+      <Filter>src\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="NPC.cpp">
+      <Filter>src\Player and NPC Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>src\Player and NPC Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>src\Core System Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerManager.cpp">
+      <Filter>src\Player and NPC Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>src\Database Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>src\Entry Point</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerManager.cpp">
+      <Filter>src\Networking</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TCPLoginServer.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="UDPGameServer.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerManager.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="NetworkUtils.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="GameLogic.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="IOCPServer.h">
-      <Filter>include</Filter>
+    <ClInclude Include="Compression.h">
+      <Filter>include\Core System Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Config.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="NetworkTypes.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="Logger.h">
-      <Filter>include</Filter>
+      <Filter>include\Core System Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Encryption.h">
-      <Filter>include</Filter>
+      <Filter>include\Core System Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="TCPInventoryServer.h">
-      <Filter>include</Filter>
+    <ClInclude Include="Logger.h">
+      <Filter>include\Core System Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="TCPChatServer.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="MessageQueue.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="NetworkHandler.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="Compression.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="NPC.h">
-      <Filter>include</Filter>
+    <ClInclude Include="GameLogic.h">
+      <Filter>include\Game Logic &amp; World Management</Filter>
     </ClInclude>
     <ClInclude Include="WorldState.h">
-      <Filter>include</Filter>
+      <Filter>include\Game Logic &amp; World Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>include\Player and NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.h">
+      <Filter>include\Player and NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerManager.h">
+      <Filter>include\Player and NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCPServer.h">
+      <Filter>include\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageQueue.h">
+      <Filter>include\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkConfig.h">
+      <Filter>include\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkHandler.h">
+      <Filter>include\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkTypes.h">
+      <Filter>include\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPChatServer.h">
+      <Filter>include\Multiplayer Services</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPInventoryServer.h">
+      <Filter>include\Multiplayer Services</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPLoginServer.h">
+      <Filter>include\Multiplayer Services</Filter>
+    </ClInclude>
+    <ClInclude Include="UDPGameServer.h">
+      <Filter>include\Multiplayer Services</Filter>
     </ClInclude>
     <ClInclude Include="MathUtils.h">
-      <Filter>include</Filter>
+      <Filter>include\Game Logic &amp; World Management</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkUtils.h">
+      <Filter>include\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerManager.h">
+      <Filter>include\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerModule.h">
+      <Filter>include\Networking</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

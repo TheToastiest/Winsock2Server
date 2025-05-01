@@ -72,7 +72,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)include;C:\Program Files\Git\vcpkg\installed\x64-windows\lib;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;C:\Program Files\Git\vcpkg\installed\x64-windows\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <VcpkgInstalledDir>C:\Program Files\Git\vcpkg\installed</VcpkgInstalledDir>
@@ -114,14 +114,17 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>$(ProjectDir)include;C:\Program Files\Git\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /std:c++20 %(AdditionalOptions)</AdditionalOptions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalOptions>
       </AdditionalOptions>
+      <AdditionalLibraryDirectories>C:\Program Files\Git\vcpkg\installed\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>C:\Program Files\Git\vcpkg\installed\x64-windows\lib\libsodium.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -134,15 +137,22 @@
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ShowProgress>LinkVerbose</ShowProgress>
+      <AdditionalDependencies>C:\Program Files\Git\vcpkg\installed\x64-windows\lib\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Config.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="Encryption.cpp" />
     <ClCompile Include="IOCPServer.cpp" />
@@ -151,15 +161,23 @@
     <ClCompile Include="MessageQueue.cpp" />
     <ClCompile Include="NetworkHandler.cpp" />
     <ClCompile Include="NetworkUtils.cpp" />
-    <ClCompile Include="GameLogic.cpp" />
+    <ClCompile Include="GameLogic.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/std:c++20 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/std:c++20 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="ServerManager.cpp" />
     <ClCompile Include="TCPChatServer.cpp" />
     <ClCompile Include="TCPInventoryServer.cpp" />
     <ClCompile Include="TCPLoginServer.cpp" />
     <ClCompile Include="TLSWrapper.cpp" />
     <ClCompile Include="UDPGameServer.cpp" />
-    <ClCompile Include="WorldState.cpp" />
+    <ClCompile Include="WorldState.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/std:c++20 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Compression.h" />
@@ -170,12 +188,15 @@
     <ClInclude Include="IOCPServer.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="MessageQueue.h" />
+    <ClInclude Include="NetworkConfig.h" />
     <ClInclude Include="NetworkHandler.h" />
     <ClInclude Include="NetworkTypes.h" />
     <ClInclude Include="NetworkUtils.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="PlayerManager.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="ServerManager.h" />
+    <ClInclude Include="ServerModule.h" />
     <ClInclude Include="TCPChatServer.h" />
     <ClInclude Include="TCPInventoryServer.h" />
     <ClInclude Include="TCPLoginServer.h" />

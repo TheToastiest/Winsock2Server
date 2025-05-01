@@ -108,3 +108,23 @@ void NPC::setPosition(float newX, float newY) {
 void NPC::setSpeed(float newSpeed) {
     speed = newSpeed;
 }
+
+void NPC::saveToBinary(std::ofstream& outFile) const {
+    outFile.write(reinterpret_cast<const char*>(&npcID), sizeof(npcID));
+    outFile.write(reinterpret_cast<const char*>(&posX), sizeof(posX));
+    outFile.write(reinterpret_cast<const char*>(&posY), sizeof(posY));
+    outFile.write(reinterpret_cast<const char*>(&speed), sizeof(speed));
+    outFile.write(reinterpret_cast<const char*>(&waypointSet), sizeof(waypointSet));
+    outFile.write(reinterpret_cast<const char*>(&waypointX), sizeof(waypointX));
+    outFile.write(reinterpret_cast<const char*>(&waypointY), sizeof(waypointY));
+}
+
+void NPC::loadFromBinary(std::ifstream& inFile) {
+    inFile.read(reinterpret_cast<char*>(&npcID), sizeof(npcID));
+    inFile.read(reinterpret_cast<char*>(&posX), sizeof(posX));
+    inFile.read(reinterpret_cast<char*>(&posY), sizeof(posY));
+    inFile.read(reinterpret_cast<char*>(&speed), sizeof(speed));
+    inFile.read(reinterpret_cast<char*>(&waypointSet), sizeof(waypointSet));
+    inFile.read(reinterpret_cast<char*>(&waypointX), sizeof(waypointX));
+    inFile.read(reinterpret_cast<char*>(&waypointY), sizeof(waypointY));
+}

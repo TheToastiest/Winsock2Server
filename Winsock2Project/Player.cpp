@@ -1,10 +1,12 @@
 ﻿#include "Player.h"
+#include <fstream>
+#include <iostream>
 
 
 // Constructor: initializes member variables and sets initial positions and timestamp.
-Player::Player(const std::string& name, int id)
-    : name(name),
-    id(id),
+Player::Player(std::string name, int id)
+    : name(std::move(name)),
+    playerID(id),
     posX(0.0f),
     posY(0.0f),
     prevX(0.0f),
@@ -105,7 +107,7 @@ std::string Player::getName() const
 // Returns the player's ID.
 int Player::getID() const
 {
-    return id;
+    return playerID;
 }
 
 // Convenience accessor for the current X position.
@@ -119,3 +121,19 @@ float Player::getY() const
 {
     return posY;
 }
+
+void Player::saveToBinary(std::ofstream& outFile) const {
+    outFile.write(reinterpret_cast<const char*>(playerID), sizeof(playerID));
+    outFile.write(reinterpret_cast<const char*>(&health), sizeof(health));
+}
+
+void Player::loadFromBinary(std::ifstream& inFile) {
+    inFile.read(reinterpret_cast<char*>(playerID), sizeof(playerID));
+    inFile.read(reinterpret_cast<char*>(&health), sizeof(health));
+}
+
+void playerGetManager() {
+	// This function is a stub. In a real application, you would return the player manager instance.
+	// For now, we will just print a message.
+	std::cout << "PlayerManager instance requested." << std::endl;
+} 

@@ -1,22 +1,15 @@
-﻿/*
-#pragma once
-#include <cryptopp/chacha.h>
-#include "cryptopp/cryptlib.h"
-#include <cryptopp/hmac.h>
-#include <cryptopp/sha.h>
-#include "cryptopp/osrng.h"
-#include "cryptopp/filters.h"
-#include "cryptopp/hex.h"
+﻿#ifndef ENCRYPTION_H
+#define ENCRYPTION_H
+
+#include <sodium.h>
 #include <string>
+#include <vector>
 
-// Encrypt and decrypt packets
-std::string encryptPacket(const std::string& data, const std::string& key);
-std::string decryptPacket(const std::string& encryptedPacket, const std::string& key);
+class Encryption {
+public:
+    static bool initialize();  // Call once at startup
+    static std::vector<unsigned char> encrypt(const std::string& plaintext, const std::vector<unsigned char>& key, const std::vector<unsigned char>& nonce);
+    static std::string decrypt(const std::vector<unsigned char>& ciphertext, const std::vector<unsigned char>& key, const std::vector<unsigned char>& nonce);
+};
 
-// HMAC functions for integrity verification
-std::string generateHMAC(const std::string& data, const std::string& key);
-bool verifyHMAC(const std::string& data, const std::string& key, const std::string& expectedHMAC);
-
-// Assertion utility function
-void assertValid(bool condition, const char* message);
-*/
+#endif // ENCRYPTION_H
